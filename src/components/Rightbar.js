@@ -15,7 +15,6 @@ export default function Rightbar() {
   }, [city, dispatch]);
 
   const setValue = (e) => {
-    console.log(e.target.innerText);
     setCity(e.target.innerText);
   };
   return (
