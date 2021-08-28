@@ -1,0 +1,134 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Lato", sans-serif;
+}
+
+.AppContainer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#a3cae4), to(#6b828f));
+  background-image: linear-gradient(#a3cae4, #6b828f);
+}
+
+.AppContainer .weather {
+  width: 1200px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-shadow: -1px 2px 25px 4px rgba(0, 0, 0, 0.37);
+  box-shadow: -1px 2px 25px 4px rgba(0, 0, 0, 0.37);
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.AppContainer .weather .feedContainer {
+  -webkit-box-flex: 5;
+      -ms-flex: 5;
+          flex: 5;
+  width: 100%;
+  padding: 40px;
+}
+
+.AppContainer .weather .feedContainer .logo {
+  font-size: 24px;
+  color: white;
+}
+
+.AppContainer .weather .feedContainer .weatherBottom {
+  margin-top: 30vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  color: #fff;
+}
+
+.AppContainer .weather .feedContainer .weatherBottom .weatherDegree {
+  font-size: 80px;
+  margin-left: 40px;
+  margin-right: 50px;
+  position: relative;
+}
+
+.AppContainer .weather .feedContainer .weatherBottom .weatherDegree span {
+  position: absolute;
+  top: 15px;
+  width: 10px;
+  height: 10px;
+  border: 3px solid #fff;
+  border-radius: 50%;
+}
+
+.AppContainer .weather .feedContainer .weatherBottom .weatherInfo {
+  text-align: center;
+  margin-right: 50px;
+}
+
+.AppContainer .weather .feedContainer .weatherBottom .weatherInfo .weatherCity {
+  font-size: 52px;
+}
+
+.AppContainer .weather .feedContainer .weatherBottom .weatherInfo .weatherTime {
+  font-weight: 300;
+}
+
+.AppContainer .weather .feedContainer .weatherBottom .weatherCondition {
+  margin-top: 20px;
+  margin-right: 40px;
+  display: inline-block;
+  text-align: center;
+}
+
+.AppContainer .weather .feedContainer .weatherBottom .weatherCondition .weatherConditionText {
+  font-weight: 300;
+}
+
+.AppContainer .weather .rightbarContainer {
+  -webkit-box-flex: 3;
+      -ms-flex: 3;
+          flex: 3;
+  padding: 0 40px;
+  position: relative;
+  background-color: inherit;
+}
+
+.AppContainer .weather .rightbarContainer::after {
+  position: absolute;
+  top: -27px;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  content: "";
+  opacity: 0.5;
+  width: 100%;
+  height: 113%;
+}
+
+.AppContainer .weather .rightbarContainer .rightbarSearch {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+/*# sourceMappingURL=app.css.map */
