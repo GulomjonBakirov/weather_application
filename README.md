@@ -34,3 +34,7 @@ or
 npm start
 ```
 
+## Demo
+
+[weather.uz](https://weathergulomjon.netlify.app/)
+
