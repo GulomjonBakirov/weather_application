@@ -13,7 +13,7 @@
   background-image: linear-gradient(#a3cae4, #6b828f);
 
   .weather {
-    width: 1200px;
+    width: 90%;
     display: flex;
     align-items: center;
     -webkit-box-shadow: -1px 2px 25px 4px rgba(0, 0, 0, 0.37);
@@ -137,6 +137,75 @@
           display: flex;
           align-items: center;
           justify-content: space-between;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 1000px) {
+  .AppContainer {
+    .weather {
+      .feedContainer {
+        flex: 4;
+        width: 50%;
+      }
+      .rightbarContainer {
+        flex: 4;
+        width: 40%;
+
+        .rightbarSearch {
+          .searchIcon {
+            padding: 10px;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 950px) {
+  .AppContainer {
+    .weather {
+      flex-direction: column;
+      background-size: 100% 100% !important;
+
+      .feedContainer {
+        padding: 0;
+        width: 90%;
+        .logo {
+          margin-top: 10px;
+        }
+        .weatherBottom {
+          margin: 20px 15px 15px 0;
+          display: block;
+
+          .weatherDegree {
+            margin: 0;
+            text-align: right;
+          }
+          .weatherInfo {
+            margin: 0;
+            text-align: right;
+          }
+          .weatherCondition {
+            margin-left: 90%;
+            text-align: right;
+          }
+        }
+      }
+      .rightbarContainer {
+        padding: 10px;
+
+        width: 90%;
+        .rightbarSearch {
+          .searchIcon {
+            padding: 10px;
+            width: 20px;
+            height: 20px;
+            top: 0;
+            right: 0;
+          }
         }
       }
     }

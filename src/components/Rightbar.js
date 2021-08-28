@@ -1,49 +1,23 @@
-import React, { useState } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import SearchIcon from "@material-ui/icons/Search";
-
-const regions = [
-  {
-    name: "Tashkent",
-  },
-  {
-    name: "Jizzakh",
-  },
-  {
-    name: "Andijan",
-  },
-  {
-    name: "Samarkand",
-  },
-  {
-    name: "Surkhandaryo",
-  },
-
-  {
-    name: "Namangan",
-  },
-  {
-    name: "Nukus",
-  },
-  {
-    name: "Khiva",
-  },
-  {
-    name: "Navoiy",
-  },
-
-  {
-    name: "Bukhara",
-  },
-  {
-    name: "Denov",
-  },
-  {
-    name: "Qarshi",
-  },
-];
+import { useDispatch, useSelector } from "react-redux";
+import { getWeatherData } from "../store/weatherAction";
+import { regions } from "../regionsData";
 
 export default function Rightbar() {
   const [searchItem, setSearchItem] = useState("");
+  const [city, setCity] = useState("Tashkent");
+  const dispatch = useDispatch();
+  const { error, loading, data } = useSelector((state) => state.weather);
+  console.log(data);
+  useEffect(() => {
+    dispatch(getWeatherData(city));
+  }, [city, dispatch]);
+
+  const setValue = (e) => {
+    console.log(e.target.innerText);
+    setCity(e.target.innerText);
+  };
   return (
     <div className="rightbarContainer">
       <div className="rightbarSearch">
@@ -58,7 +32,7 @@ export default function Rightbar() {
       <ul className="rightbarList">
         {regions
           .filter((region) => {
-            if (searchItem == "") {
+            if (searchItem === "") {
               return region;
             } else if (
               region.name.toLowerCase().includes(searchItem.toLowerCase())
@@ -67,31 +41,41 @@ export default function Rightbar() {
             }
           })
           .map((region, index) => (
-            <li key={index} className="rightbarItem">
+            <li key={index} className="rightbarItem" onClick={setValue}>
               {region.name}
             </li>
           ))}
       </ul>
       <hr />
       <h3>Weather Details</h3>
-      <div className="details">
-        <div className="detail">
-          <h4>Cloudy</h4>
-          <span>12%</span>
+      {loading ? (
+        <h1>Loading...</h1>
+      ) : (
+        <div className="details">
+          <div className="detail">
+            <h4>Cloudy</h4>
+            <span>{data ? data.current.cloud : "Some Error in Server"}%</span>
+          </div>
+          <div className="detail">
+            <h4>Humidity</h4>
+            <span>
+              {data ? data.current.humidity : "Some Error in Server"}%
+            </span>
+          </div>
+          <div className="detail">
+            <h4>Wind</h4>
+            <span>
+              {data ? data.current.wind_mph : "Some Error in Server"}mph
+            </span>
+          </div>
+          <div className="detail">
+            <h4>Gust</h4>
+            <span>
+              {data ? data.current.gust_mph : "Some Error in Server"}mph
+            </span>
+          </div>
         </div>
-        <div className="detail">
-          <h4>Humidity</h4>
-          <span>12%</span>
-        </div>
-        <div className="detail">
-          <h4>Wind</h4>
-          <span>12%</span>
-        </div>
-        <div className="detail">
-          <h4>Rain</h4>
-          <span>12%</span>
-        </div>
-      </div>
+      )}
       <hr />
     </div>
   );

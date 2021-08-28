@@ -21,7 +21,7 @@
 }
 
 .AppContainer .weather {
-  width: 1200px;
+  width: 90%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -209,5 +209,67 @@
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+}
+
+@media (max-width: 1000px) {
+  .AppContainer .weather .feedContainer {
+    -webkit-box-flex: 4;
+        -ms-flex: 4;
+            flex: 4;
+    width: 50%;
+  }
+  .AppContainer .weather .rightbarContainer {
+    -webkit-box-flex: 4;
+        -ms-flex: 4;
+            flex: 4;
+    width: 40%;
+  }
+  .AppContainer .weather .rightbarContainer .rightbarSearch .searchIcon {
+    padding: 10px;
+  }
+}
+
+@media (max-width: 950px) {
+  .AppContainer .weather {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    background-size: 100% 100% !important;
+  }
+  .AppContainer .weather .feedContainer {
+    padding: 0;
+    width: 90%;
+  }
+  .AppContainer .weather .feedContainer .logo {
+    margin-top: 10px;
+  }
+  .AppContainer .weather .feedContainer .weatherBottom {
+    margin: 20px 15px 15px 0;
+    display: block;
+  }
+  .AppContainer .weather .feedContainer .weatherBottom .weatherDegree {
+    margin: 0;
+    text-align: right;
+  }
+  .AppContainer .weather .feedContainer .weatherBottom .weatherInfo {
+    margin: 0;
+    text-align: right;
+  }
+  .AppContainer .weather .feedContainer .weatherBottom .weatherCondition {
+    margin-left: 90%;
+    text-align: right;
+  }
+  .AppContainer .weather .rightbarContainer {
+    padding: 10px;
+    width: 90%;
+  }
+  .AppContainer .weather .rightbarContainer .rightbarSearch .searchIcon {
+    padding: 10px;
+    width: 20px;
+    height: 20px;
+    top: 0;
+    right: 0;
+  }
 }
 /*# sourceMappingURL=app.css.map */
