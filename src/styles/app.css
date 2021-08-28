@@ -105,7 +105,15 @@
   -webkit-box-flex: 3;
       -ms-flex: 3;
           flex: 3;
-  background-color: rgba(0, 0, 0, 0.322);
+  background-color: rgba(212, 212, 212, 0.322);
+}
+
+.AppContainer .weather .rightbarContainer hr {
+  width: 100%;
+  border: none;
+  height: 1px;
+  margin: 10px 0;
+  background-color: rgba(255, 255, 255, 0.418);
 }
 
 .AppContainer .weather .rightbarContainer .rightbarSearch {
@@ -126,30 +134,30 @@
   width: 70%;
   height: 40px;
   border: none;
-  border-bottom: 1px solid #fff;
+  border-bottom: 1px solid #111;
   background: inherit;
   font-size: 20px;
-  color: #fff;
+  color: #111;
 }
 
 .AppContainer .weather .rightbarContainer .rightbarSearch .search::-webkit-input-placeholder {
   padding-left: 5px;
-  color: #f1f1f1;
+  color: rgba(255, 255, 255, 0.294);
 }
 
 .AppContainer .weather .rightbarContainer .rightbarSearch .search:-ms-input-placeholder {
   padding-left: 5px;
-  color: #f1f1f1;
+  color: rgba(255, 255, 255, 0.294);
 }
 
 .AppContainer .weather .rightbarContainer .rightbarSearch .search::-ms-input-placeholder {
   padding-left: 5px;
-  color: #f1f1f1;
+  color: rgba(255, 255, 255, 0.294);
 }
 
 .AppContainer .weather .rightbarContainer .rightbarSearch .search::placeholder {
   padding-left: 5px;
-  color: #f1f1f1;
+  color: rgba(255, 255, 255, 0.294);
 }
 
 .AppContainer .weather .rightbarContainer .rightbarSearch .search:focus {
@@ -182,7 +190,24 @@
 
 .AppContainer .weather .rightbarContainer .rightbarList .rightbarItem {
   margin: 5px;
-  color: #fff;
+  color: #111;
   cursor: pointer;
+}
+
+.AppContainer .weather .rightbarContainer .rightbarList .rightbarItem:hover, .AppContainer .weather .rightbarContainer .rightbarList .rightbarItem:focus {
+  color: #f1f1f1;
+}
+
+.AppContainer .weather .rightbarContainer .details .detail {
+  margin: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 /*# sourceMappingURL=app.css.map */

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import SearchIcon from "@material-ui/icons/Search";
 
 const regions = [
@@ -43,21 +43,37 @@ const regions = [
 ];
 
 export default function Rightbar() {
+  const [searchItem, setSearchItem] = useState("");
   return (
     <div className="rightbarContainer">
       <div className="rightbarSearch">
-        <input className="search" placeholder="Search Your Location" />
+        <input
+          type="text"
+          className="search"
+          placeholder="Search Your Location"
+          onChange={(e) => setSearchItem(e.target.value)}
+        />
         <SearchIcon className="searchIcon" />
       </div>
       <ul className="rightbarList">
-        {regions.map((region, index) => (
-          <li key={index} className="rightbarItem">
-            {region.name}
-          </li>
-        ))}
+        {regions
+          .filter((region) => {
+            if (searchItem == "") {
+              return region;
+            } else if (
+              region.name.toLowerCase().includes(searchItem.toLowerCase())
+            ) {
+              return region;
+            }
+          })
+          .map((region, index) => (
+            <li key={index} className="rightbarItem">
+              {region.name}
+            </li>
+          ))}
       </ul>
       <hr />
-      <h4>Weather Details</h4>
+      <h3>Weather Details</h3>
       <div className="details">
         <div className="detail">
           <h4>Cloudy</h4>
