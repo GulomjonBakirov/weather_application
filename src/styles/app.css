@@ -36,11 +36,11 @@
 }
 
 .AppContainer .weather .feedContainer {
+  padding: 40px;
   -webkit-box-flex: 5;
       -ms-flex: 5;
           flex: 5;
-  width: 100%;
-  padding: 40px;
+  height: 40vh;
 }
 
 .AppContainer .weather .feedContainer .logo {
@@ -49,7 +49,7 @@
 }
 
 .AppContainer .weather .feedContainer .weatherBottom {
-  margin-top: 30vh;
+  margin-top: 25vh;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -100,24 +100,12 @@
 }
 
 .AppContainer .weather .rightbarContainer {
+  height: 40vh;
+  padding: 40px;
   -webkit-box-flex: 3;
       -ms-flex: 3;
           flex: 3;
-  padding: 0 40px;
-  position: relative;
-  background-color: inherit;
-}
-
-.AppContainer .weather .rightbarContainer::after {
-  position: absolute;
-  top: -27px;
-  right: 0;
-  left: 0;
-  bottom: 0;
-  content: "";
-  opacity: 0.5;
-  width: 100%;
-  height: 113%;
+  background-color: rgba(0, 0, 0, 0.322);
 }
 
 .AppContainer .weather .rightbarContainer .rightbarSearch {
@@ -130,5 +118,71 @@
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  margin-bottom: 20px;
+  position: relative;
+}
+
+.AppContainer .weather .rightbarContainer .rightbarSearch .search {
+  width: 70%;
+  height: 40px;
+  border: none;
+  border-bottom: 1px solid #fff;
+  background: inherit;
+  font-size: 20px;
+  color: #fff;
+}
+
+.AppContainer .weather .rightbarContainer .rightbarSearch .search::-webkit-input-placeholder {
+  padding-left: 5px;
+  color: #f1f1f1;
+}
+
+.AppContainer .weather .rightbarContainer .rightbarSearch .search:-ms-input-placeholder {
+  padding-left: 5px;
+  color: #f1f1f1;
+}
+
+.AppContainer .weather .rightbarContainer .rightbarSearch .search::-ms-input-placeholder {
+  padding-left: 5px;
+  color: #f1f1f1;
+}
+
+.AppContainer .weather .rightbarContainer .rightbarSearch .search::placeholder {
+  padding-left: 5px;
+  color: #f1f1f1;
+}
+
+.AppContainer .weather .rightbarContainer .rightbarSearch .search:focus {
+  outline: none;
+}
+
+.AppContainer .weather .rightbarContainer .rightbarSearch .searchIcon {
+  position: absolute;
+  top: -40px;
+  right: -40px;
+  width: 40px;
+  height: 40px;
+  padding: 20px;
+  color: #fff;
+  background-color: #36abb6;
+  cursor: pointer;
+}
+
+.AppContainer .weather .rightbarContainer .rightbarList {
+  list-style: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.AppContainer .weather .rightbarContainer .rightbarList .rightbarItem {
+  margin: 5px;
+  color: #fff;
+  cursor: pointer;
 }
 /*# sourceMappingURL=app.css.map */
